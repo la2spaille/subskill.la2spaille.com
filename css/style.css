@@ -307,10 +307,54 @@ li>a {
 }
 
 /* Strength */
-.l-strength .l-rl {
-    padding: 0 8.3333%;
+.l-strength {
     max-width: 1440px;
     margin: auto;
+    position: relative;
+
+}
+.l-strength::before {
+    content: '';
+    height: 180px;
+    position: absolute;
+    background: var(--primary);
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+.l-strength::after {
+    content: '';
+    height: 100%;
+    position: absolute;
+    background: var(--tertiary);
+    width: 20%;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    max-width:331px ;
+} 
+.l-strength .l-rl {
+    padding: 0 8.3333%;
+
+}
+.w-strength_header {
+    margin: 0 0 48px;
+}
+.w-strength_header h1 {
+    margin: 0 0 14px;
+}
+.w-strength_header p {
+    max-width: 856px;
+}
+
+
+.w-strength {
+    position: relative;
+    z-index: 2;
+    background: var(--light);
+    border-radius: 10px 10px 0  0;
+    padding: 32px 10px 0;
+
 }
 .card-strength {
     border: 1px solid #D9D9D9;
@@ -325,7 +369,15 @@ li>a {
 }
 .w-strength_icon {
     width: 70px;
+    margin: 0 0 20px;
 }
+.strength_title {
+    margin: 0 0 10px;
+}
+.card-strength  > .w--c-btn {
+    padding: 32px 0 0;
+}
+
 /* About */
 
 /* Video Player */
