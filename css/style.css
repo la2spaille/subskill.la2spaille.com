@@ -9,6 +9,7 @@
     --font-family-primary: "Montserrat";
     /* utils */
     --header-height: 90px;
+    --testimony-item: 4;
 
 }
 
@@ -27,6 +28,10 @@
 
 .f-color_light {
     color: var(--light);
+}
+
+.f-color_dark {
+    color: var(--dark);
 }
 
 .f-h1 {
@@ -67,9 +72,11 @@
 .f-700 {
     font-weight: 700;
 }
+
 .f-center {
     text-align: center;
 }
+
 .f-underline {
     text-decoration: underline;
 }
@@ -85,7 +92,7 @@
     font-weight: 700;
 }
 
-@media screen and (min-width:calc(237px)) {
+@media screen and (min-width:750px) {
     .c-btn {
         width: 237px;
     }
@@ -165,10 +172,14 @@ ol {
 svg {
     pointer-events: none;
     width: 100%;
+    height: auto;
+}
+
+svg.icon {
+    width: initial;
 }
 
 img {
-    width: 100%;
     height: auto;
 }
 
@@ -207,27 +218,10 @@ body {
 
 }
 
-
-/* #app {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    overflow: hidden;
-  
-  
-  }
-  
-  .page {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    left: 0;
-    will-change: transform;
-  }
-   */
-
+input::placeholder {
+    font-size: 16px;
+    color: var(--dark);
+}
 
 .m\:mb {
     margin-bottom: 1.875rem;
@@ -237,7 +231,7 @@ body {
     padding-top: 1rem;
 }
 
-li > a {
+li>a {
     line-height: 1.5625rem;
 }
 
@@ -245,15 +239,106 @@ li > a {
     margin: 0 0 48px;
 }
 
+.email_input {
+    padding: 20px;
+    line-height: 187.5%;
+    background: var(--light);
+    border-radius: 5px;
+    width: 100%;
+
+}
+
+/* Nav */
+/* Hero */
+.h-home {
+    background: var(--primary);
+}
+.h-home .h-tb {
+    padding: 96px 0 0;
+}
+
+.w-hero {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.50);
+}
+
+.w-hero >.w-col,
+.w-hero_svg {
+    margin: auto;
+    max-width: 500px;
+}
+.w-hero >.w-col {
+    margin: 0 auto 48px;
+}
+.w-hero {
+    padding: 0 24px ;
+}
+.w-hero h1 {
+    margin: 0 0 14px;
+}
+.w-hero_cta {
+    padding: 32px 0 0;
+}
+
+.w-hero_footer {
+    padding: 32px 24px;
+}
+.w-hero_footer .w--c-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.w-hero_footer>.w-row>.w-hero_stat {
+    margin:0  0 32px;
+}
+
+.w-hero_stat {
+    max-width: 137px;
+
+}
+
+.w-hero_stat>div:first-child {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.w-hero_stat>div:last-child {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Strength */
+.l-strength .l-rl {
+    padding: 0 8.3333%;
+    max-width: 1440px;
+    margin: auto;
+}
+.card-strength {
+    border: 1px solid #D9D9D9;
+    opacity: 0.84;
+    border-radius: 10px;
+    padding: 20px;
+
+}
+.card-strength__dark {
+    background: var(--primary);
+    color: var(--light);
+}
+.w-strength_icon {
+    width: 70px;
+}
+/* About */
+
 /* Video Player */
 .l-video_player .l-rl {
     max-width: 1440px;
 }
+
 .w-video_player {
     position: relative;
 }
 
 .w-video_player>img {
+    width: 100%;
     object-fit: cover;
 }
 
@@ -272,27 +357,132 @@ li > a {
     padding: 0 0 0 5px;
 }
 
+/* Trial */
+.l-trial {
+    background: var(--tertiary);
+}
+
+.l-trial .l-rl {
+    padding: 0 8.3333%;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.w-trial {
+    background: var(--primary);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+
+    @media screen and (min-width:760px) {
+        display: flex;
+        padding: 70px 48px 0 96px;
+
+    }
+}
+
+.w-trial_content {
+    max-width: 522px;
+
+    @media screen and (min-width:760px) {
+        margin: 0 0 92px;
+
+    }
+}
+
+.trial_heading {
+    margin: 0 0 14px;
+
+}
+
+.w-trial .w--c-btn {
+    padding: 32px 0 0;
+}
+
+.w-trial::after {
+    content: '';
+    position: absolute;
+    background: var(--light);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    transform: translate(20%, 20%);
+
+}
+
+.w-trial_svg {
+    align-self: flex-end;
+    position: relative;
+    z-index: 2;
+}
+
+/* Testimony */
+.l-testimony {
+    background: var(--tertiary);
+}
+
+.l-testimony .l-tb {
+    padding: 96px 0 0;
+}
+
+.l-testimony .l-rl {
+    padding: 0 8.3333%;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.w-testimony>.w-col {
+    padding: 32px 0 0;
+}
+
+.testimony_heading {
+    max-width: 250px;
+}
+
+.w-testimony_svg {
+    max-width: 525.11px;
+    margin: auto;
+}
+
+.testimony {
+    white-space: pre-line;
+}
+
+.company_logo {
+    margin: 0 0 32px;
+}
+
 /* FAQ */
 .l-faq .l-tb {
     padding: 96px 0;
 }
+
 .l-faq .l-rl {
     padding: 0 8.3333%;
     max-width: 1440px;
     margin: auto;
 }
+
 .card-question {
     padding: 20px;
     background: #B3F9E0;
 }
+
 .card-question__dark {
     background: var(--primary);
 }
+
 .card-question__grey {
     background: var(--tertiary);
 }
+
 .question {
-    margin:  0 0 20px;
+    margin: 0 0 20px;
 }
 
 /* Article */
@@ -415,13 +605,94 @@ li > a {
 
 /* Newsletter */
 .l-newsletter .l-tb {
-    padding: 96px 0;
+    padding: 0 0 96px;
 }
+
 .l-newsletter .l-rl {
     padding: 0 8.3333%;
     max-width: 1440px;
     margin: auto;
 }
+
+.w-newsletter {
+    background: var(--tertiary);
+    border-bottom-left-radius: 50px;
+    padding: 20px;
+    position: relative;
+
+    @media screen and (min-width:760px) {
+        display: flex;
+        padding: 70px 48px 0 96px;
+
+    }
+}
+
+.w-newsletter_content {
+    max-width: 522px;
+
+    @media screen and (min-width:760px) {
+        margin: 0 0 92px;
+
+    }
+}
+
+.w-newsletter::after {
+    content: '';
+    position: absolute;
+    background: var(--light);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    transform: translate(20%, 20%);
+
+}
+
+@media screen and (min-width:760px) {
+    .email_input {
+        max-width: 391px;
+    }
+
+    .w-newsletter::after {
+
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.newsletter_heading {
+    margin: 0 0 14px;
+    max-width: 535px;
+}
+
+.w-input {
+    padding: 32px 0 0;
+
+}
+
+.w-checkbox {
+    display: flex;
+
+}
+
+.w-checkbox>input {
+    margin: 0 18px 0 0;
+}
+
+.w-newsletter_svg {
+    position: relative;
+    z-index: 1;
+    padding: 12px 24px 0;
+    max-width: 459px;
+
+    @media screen and (min-width:760px) {
+        align-self: flex-end;
+
+    }
+}
+
 
 /* Footer */
 #footer {
@@ -448,6 +719,7 @@ li > a {
 
     }
 }
+
 .c-logo_footer img {
     width: initial;
 }
