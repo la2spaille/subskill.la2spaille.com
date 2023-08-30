@@ -345,6 +345,7 @@ li>a {
 }
 .w-strength_header p {
     max-width: 856px;
+    margin: auto;
 }
 
 
@@ -361,6 +362,7 @@ li>a {
     opacity: 0.84;
     border-radius: 10px;
     padding: 20px;
+    height: 100%;
 
 }
 .card-strength__dark {
@@ -376,6 +378,16 @@ li>a {
 }
 .card-strength  > .w--c-btn {
     padding: 32px 0 0;
+}
+@media screen and (min-width:490px) {
+    .w-strength {
+        padding: 72px  0 0;
+    }
+    .w-strength_list {
+        display: grid;
+        gap:24px;
+        grid-template-columns: repeat(3,1fr);
+    }
 }
 
 /* About */
