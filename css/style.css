@@ -448,6 +448,9 @@ li > a {
 
     }
 }
+.c-logo_footer img {
+    width: initial;
+}
 
 .footer_nav__secondary>*+* {
     padding: 24px 0 0;
