@@ -9,6 +9,41 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
     </style>
+    <script>
+        window.B = {
+            delay: 700,
+    
+            scroll: {
+                y: 0
+            },
+            config: {
+                serviceWorker: false
+            },
+            route: {
+                "new": {
+                    "url": location.pathname,
+                    "page": null
+                },
+                "old": {
+                    "url": false,
+                    "page": false
+                }
+            },
+            e: {
+                s: null,
+                b: null
+            },
+            E: {
+                S: null,
+                T: null,
+                P: null,
+            }
+            , was: []
+        }
+
+    
+    </script>    
+    
 </head>
 
 <body>
@@ -774,7 +809,8 @@
                                                 <button class="c-slider_btn c-slider_btn__dark next"></button>
                                             </div>
                                             <div class="w-c--slider_btn">
-                                                <button disabled class="c-slider_btn c-slider_btn__dark previous"></button>
+                                                <button disabled
+                                                    class="c-slider_btn c-slider_btn__dark previous"></button>
                                             </div>
                                         </div>
                                     </div>
@@ -984,7 +1020,7 @@
                         </div>
                     </div>
                 </section>
-                
+
                 <section class="l-article f-color_light">
                     <div class="l-rl">
                         <div class="l-tb">
@@ -1130,11 +1166,15 @@
                                             courrier électronique et vous prenez connaissance de notre Politique de
                                             confidentialité.</span></p>
                                     <div class="w-input">
-                                        <input class="email_input f-400 f-color_dark" type="email" name="email"
+                                        <input class="c-email_input f-400 f-color_dark" type="email" name="email"
                                             id="email" placeholder="Renseignez votre email">
                                     </div>
-                                    <label class="w-checkbox w-input m:mb">
-                                        <input type="checkbox" name="" id="">
+                                    <label class="w-newsletter_checkbox w-input m:mb" for="newsletter_checkbox">
+                                        <input type="checkbox" class="c-o_checkbox newsletter_input_checkbox"
+                                            name="newsletter_checkbox" id="newsletter_checkbox">
+                                        <div class="w--c-checkbox">
+                                            <span class="c-checkbox"></span>
+                                        </div>
                                         <p class="f-base"><span>En m'inscrivant à cette newsletter, j'accepte de
                                                 recevoir des communications email et des offres exclusives de la part de
                                                 la marque</span></p>
@@ -1326,7 +1366,8 @@
                                             <li><a href="#" title="Mentions légales">Mentions légales</a></li>
                                             <li><a href="#" title="Droits et RGPD">Droits et RGPD</a></li>
                                             <li><a href="#" title="RGPD et Marketing">RGPD et Marketing</a></li>
-                                            <li><a href="#" title="Mise en conformité RGPD">Mise en conformité RGPD</a></li>
+                                            <li><a href="#" title="Mise en conformité RGPD">Mise en conformité RGPD</a>
+                                            </li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -1337,16 +1378,16 @@
             </div>
         </main>
         <nav id="nav">
-            <div class="w-nav">
-                <div class="w-menu_btn">
+            <div class="w-nav f-color_primary">
+                <div class="w-menu_btn ua-mobile">
                     <div class="w-menu_btn_svg open_menu">
                         <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="19.45" height="2.5" rx="1.25" fill="#2F2E41"/>
-                            <rect y="6.5" width="19.45" height="2.5" rx="1.25" fill="#2F2E41"/>
-                            <rect y="13" width="19.45" height="2.5" rx="1.25" fill="#2F2E41"/>
-                            </svg>
+                            <rect width="19.45" height="2.5" rx="1.25" fill="#2F2E41" />
+                            <rect y="6.5" width="19.45" height="2.5" rx="1.25" fill="#2F2E41" />
+                            <rect y="13" width="19.45" height="2.5" rx="1.25" fill="#2F2E41" />
+                        </svg>
                     </div>
-                    <div class="w-menu_btn_svg close_menu">                     
+                    <div class="w-menu_btn_svg close_menu">
                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
                             <path
                                 d="M1.66104 0.883883C2.14919 0.395728 2.94065 0.395728 3.42881 0.883883L19.3387 16.7938C19.8269 17.2819 19.8269 18.0734 19.3387 18.5616C18.8506 19.0497 18.0591 19.0497 17.5709 18.5616L1.66104 2.65165C1.17288 2.1635 1.17288 1.37204 1.66104 0.883883Z"
@@ -1358,7 +1399,41 @@
                     </div>
                 </div>
                 <div class="w--c-logo">
-                    <img src="/media/logo_header.png" alt="">
+                    <img class="c-logo c-logo_header" src="/media/logo_header.png" alt="">
+                </div>
+                <div class="w-nav_item_tl ua-desktop">
+                    <ul class="ul-nav_item_tl">
+                        <li><a title="Faire mon diagnostic RGPD" href="#">Faire mon diagnostic RGPD</a> </li>
+                        <li><a title="Calculer mes économies" href="#">Calculer mes économies</a></li>
+                    </ul>
+                </div>
+                <div class="w-nav_item_tr ua-desktop">
+                    <ul class="ul-nav_item_tr">
+                        <li><a title="Contactez-nous" href="#">Contactez-nous</a> </li>
+                        <li><a title="Calculer mes économies" href="tel:+3302 55 99 32 91">02 55 99 32 91</a></li>
+                        <li>
+                            <a class="w-sn_svg" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                                    <path d="M3.51048 12.9995H0.975615V4.83701H3.51048V12.9995ZM2.24152 3.72359C1.43106 3.72359 0.773438 3.05205 0.773438 2.24165C0.773438 1.43126 1.43062 0.773682 2.24152 0.773682C3.05241 0.773682 3.7096 1.43082 3.7096 2.24165C3.7096 3.05205 3.05198 3.72359 2.24152 3.72359ZM12.9975 12.9995H10.4684V9.0261C10.4684 8.07903 10.4491 6.86475 9.15049 6.86475C7.83263 6.86475 7.63045 7.89346 7.63045 8.95798V12.9995H5.09821V4.83701H7.52914V5.95043H7.56451C7.90293 5.30902 8.72954 4.63223 9.9627 4.63223C12.5281 4.63223 12.9997 6.32158 12.9997 8.51567V12.9995H12.9975Z" fill="#302E44"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li><a title="Se connecter" href="#">Se connecter</a></li>
+                    </ul>
+                </div>
+                <div class="w-nav_item_bl ua-desktop">
+                    <ul class="ul-nav_item_bl">
+                        <li><button class="c-icon dropdown" type="button">Solutions</button></li>
+                        <li><button class="c-icon dropdown" type="button">Services</button></li>
+                        <li><button class="c-icon dropdown" type="button">Entreprise</button></li>
+                        <li><button class="c-icon dropdown" type="button">Ressourses</button></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="w-nav_item_br ua-desktop">
+                    <ul class="ul-nav_item_br">
+                        <li><a href="#" class="c-btn c-btn__light">Essai gratuit</a></li>
+                        <li><a href="#" class="c-btn ">Demander une démo</a></li>                    </ul>
                 </div>
             </div>
         </nav>
@@ -1369,10 +1444,10 @@
                     <li><button class="c-icon next" type="button">Services</button></li>
                     <li><button class="c-icon next" type="button">Entreprise</button></li>
                     <li><button class="c-icon next" type="button">Ressourses</button></li>
-                    <li><a class="" href="#">Blog</a></li>
-                    <li><a class="" href="#">Contact</a></li>
-                    <li><a class="" href="#">Faire mon diagnostic</a></li>
-                    <li><a class="" href="#">Calculer vos économies</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Faire mon diagnostic</a></li>
+                    <li><a href="#">Calculer vos économies</a></li>
                     <li><a href="#" class="c-btn c-btn__dark">Essai gratuit</a></li>
                     <li><a href="#" class="c-btn ">Demander une démo</a></li>
                     <li class="f-center"><a href="#" class="f-underline">Se connecter</a></li>
@@ -1458,12 +1533,12 @@
                     </li>
                 </ul>
             </div>
-            
+
             <div class="w-ul-sub_menu" id="services_menu">
                 <div class="w-sub_menu_nav">
                     <button class="c-icon back" type="button">Retour</button>
                 </div>
-                <h3  class="sub_menu_title"><span>Services :</span></h3>
+                <h3 class="sub_menu_title"><span>Services :</span></h3>
                 <ul class="ul-sub_menu">
                     <li>
                         <a href="#" title="Accompagnement">
@@ -1507,12 +1582,12 @@
                     </li>
                 </ul>
             </div>
-            
+
             <div class="w-ul-sub_menu" id="entreprise_menu">
                 <div class="w-sub_menu_nav">
                     <button class="c-icon back" type="button">Retour</button>
                 </div>
-                <h3  class="sub_menu_title"><span>Entreprise :</span></h3>
+                <h3 class="sub_menu_title"><span>Entreprise :</span></h3>
                 <ul class="ul-sub_menu">
                     <li>
                         <a href="#" title="Qui sommes-nous ?">
@@ -1548,12 +1623,12 @@
                     </li>
                 </ul>
             </div>
-            
+
             <div class="w-ul-sub_menu" id="ressources_menu">
                 <div class="w-sub_menu_nav">
                     <button class="c-icon back" type="button">Retour</button>
                 </div>
-                <h3  class="sub_menu_title"><span>Ressources :</span></h3>
+                <h3 class="sub_menu_title"><span>Ressources :</span></h3>
                 <ul class="ul-sub_menu">
                     <li>
                         <a href="#" title="Livres blancs">
@@ -1589,10 +1664,46 @@
                     </li>
                 </ul>
             </div>
-            
-        </div>
-        <div id="testimony_pop_up">
 
+        </div>
+        <div id="overlay"></div>
+        <div id="testimony_pop_up">
+            <div class="w-testimony_pop_up">
+                <img src="/media/expert-pop-up.png" alt="" class="testimony_pop_up_img">
+                <div class="w-testimony_pop_up_content">
+                    <div class="w-testimony_pop_up_svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="47" height="31" viewBox="0 0 47 31" fill="none">
+                            <g clip-path="url(#clip0_3502_1227)">
+                                <path
+                                    d="M40.0795 -0.0296138C43.9054 -0.0296135 46.9806 3.08601 46.9806 6.96136L46.9806 12.914C46.9806 16.7898 43.905 19.905 40.0795 19.905L34.9549 19.905C35.5017 23.7812 36.0481 27.1038 37.1412 30.98C33.1639 30.98 27.302 18.8598 27.302 13.26L27.302 6.96126C27.302 3.08551 30.3775 -0.0297157 34.203 -0.0297154L40.0795 -0.0296138ZM12.7483 -0.0296162C16.5741 -0.0296159 19.6493 3.08601 19.6493 6.96135L19.6493 12.914C19.6493 16.7898 16.5738 19.905 12.7483 19.905L7.62365 19.905C8.17043 23.7812 8.7168 27.1038 9.80995 30.98C5.83267 30.98 -0.0292958 18.8598 -0.0292953 13.26L-0.0292948 6.96125C-0.0292944 3.08551 3.04625 -0.0297181 6.87175 -0.0297178L12.7483 -0.0296162Z"
+                                    fill="#00EA99" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_3502_1227">
+                                    <rect width="47" height="31" fill="white"
+                                        transform="matrix(1 8.74228e-08 8.74228e-08 -1 0 31)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <p class="f-base">
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam.</span>
+                    </p>
+                    <strong class="f-700 f-base"><span>Nom prénom</span></strong>
+                </div>
+                <div class="w-pop_up_close_btn close_testimony_pop_up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <path d="M15 1.5L1 15.5" stroke="black" stroke-width="2" />
+                        <path d="M0.999999 1.5L15 15.5" stroke="black" stroke-width="2" />
+                    </svg>
+                </div>
+            </div>
         </div>
     </div>
     <script src="js/app.js"></script>
