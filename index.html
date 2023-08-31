@@ -31,7 +31,7 @@
                                     <div class="w--c-btn m:mb">
                                         <button class="c-btn">Calculer mon score RGPD</button>
                                     </div>
-                                    <div>Regarder la vidéo</div>
+                                    <div><button class="c-icon play_circle f-underline">Regarder la vidéo</button></div>
                                 </div>
 
                             </div>
@@ -771,10 +771,10 @@
                                         </p>
                                         <div class="testimony_nav">
                                             <div class="w-c--slider_btn">
-                                                <button class="c-slider_btn c-slider_btn__dark"></button>
+                                                <button class="c-slider_btn c-slider_btn__dark next"></button>
                                             </div>
                                             <div class="w-c--slider_btn">
-                                                <button disabled class="c-slider_btn c-slider_btn__dark"></button>
+                                                <button disabled class="c-slider_btn c-slider_btn__dark previous"></button>
                                             </div>
                                         </div>
                                     </div>
@@ -984,6 +984,7 @@
                         </div>
                     </div>
                 </section>
+                
                 <section class="l-article f-color_light">
                     <div class="l-rl">
                         <div class="l-tb">
@@ -1337,15 +1338,24 @@
         </main>
         <nav id="nav">
             <div class="w-nav">
-                <div class="w-svg">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
-                        <path
-                            d="M1.66104 0.883883C2.14919 0.395728 2.94065 0.395728 3.42881 0.883883L19.3387 16.7938C19.8269 17.2819 19.8269 18.0734 19.3387 18.5616C18.8506 19.0497 18.0591 19.0497 17.5709 18.5616L1.66104 2.65165C1.17288 2.1635 1.17288 1.37204 1.66104 0.883883Z"
-                            fill="#2F2E41" />
-                        <path
-                            d="M19.3388 0.883695C19.8269 1.37185 19.8269 2.16331 19.3388 2.65146L3.42887 18.5614C2.94072 19.0495 2.14926 19.0495 1.6611 18.5614C1.17295 18.0732 1.17295 17.2818 1.6611 16.7936L17.571 0.883695C18.0592 0.39554 18.8506 0.395539 19.3388 0.883695Z"
-                            fill="#2F2E41" />
-                    </svg>
+                <div class="w-menu_btn">
+                    <div class="w-menu_btn_svg open_menu">
+                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="19.45" height="2.5" rx="1.25" fill="#2F2E41"/>
+                            <rect y="6.5" width="19.45" height="2.5" rx="1.25" fill="#2F2E41"/>
+                            <rect y="13" width="19.45" height="2.5" rx="1.25" fill="#2F2E41"/>
+                            </svg>
+                    </div>
+                    <div class="w-menu_btn_svg close_menu">                     
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                            <path
+                                d="M1.66104 0.883883C2.14919 0.395728 2.94065 0.395728 3.42881 0.883883L19.3387 16.7938C19.8269 17.2819 19.8269 18.0734 19.3387 18.5616C18.8506 19.0497 18.0591 19.0497 17.5709 18.5616L1.66104 2.65165C1.17288 2.1635 1.17288 1.37204 1.66104 0.883883Z"
+                                fill="#2F2E41" />
+                            <path
+                                d="M19.3388 0.883695C19.8269 1.37185 19.8269 2.16331 19.3388 2.65146L3.42887 18.5614C2.94072 19.0495 2.14926 19.0495 1.6611 18.5614C1.17295 18.0732 1.17295 17.2818 1.6611 16.7936L17.571 0.883695C18.0592 0.39554 18.8506 0.395539 19.3388 0.883695Z"
+                                fill="#2F2E41" />
+                        </svg>
+                    </div>
                 </div>
                 <div class="w--c-logo">
                     <img src="/media/logo_header.png" alt="">
@@ -1353,8 +1363,8 @@
             </div>
         </nav>
         <div id="menu">
-            <div class="w-ul-main_menu">
-                <ul class="ul-main_menu">
+            <div class="w-ul-mobile_main_menu">
+                <ul class="ul-mobile_main_menu">
                     <li><button class="c-icon next" type="button">Solutions</button></li>
                     <li><button class="c-icon next" type="button">Services</button></li>
                     <li><button class="c-icon next" type="button">Entreprise</button></li>
