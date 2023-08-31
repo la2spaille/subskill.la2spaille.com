@@ -81,6 +81,25 @@
     text-decoration: underline;
 }
 
+.c-icon::after {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: currentColor;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.c-icon.next::after {
+    content: url('/icon/next.svg');
+    margin: 0 0 0 10px;
+    padding: 0 0 2px;
+}
+
+.c-icon.back::before {
+    content: url('/icon/back.svg');
+    margin: 0 10px 0 0;
+}
+
 .c-btn {
     padding: 20px;
     border-radius: 5px;
@@ -265,7 +284,7 @@ li>a {
 /* Nav */
 #nav {
     background: var(--light);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -273,23 +292,72 @@ li>a {
     padding: 0 8.33%;
     display: flex;
     align-items: center;
+    z-index: 4;
 }
-#nav .w-svg{
+
+#nav .w-svg {
     width: 20px;
+    display: flex;
 }
+
 #nav .w--c-logo {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 /* Menu */
-    .ul-menu {
-        display: grid;
-        gap: 16px;
-    }
-   
+#menu {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.w-ul-main_menu,
+.w-ul-sub_menu {
+    padding: 96px 20px 0;
+    background: var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: var(--light);
+}
+
+.w-ul-main_menu .c-btn__dark {
+    border: 1px solid;
+}
+
+.ul-main_menu,
+.ul-sub_menu{
+    display: grid;
+    gap: 16px;
+
+}
+
+.w-ul-sub_menu {
+    width: initial;
+    transform: translateX(100%);
+
+}
+.sub_menu_title,.w-sub_menu_nav {
+    margin: 0 0 14px;
+}
+
+
+.ul-sub_menu strong {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ul-sub_menu p {
+    display: none;
+}
 
 
 /* Hero */
@@ -494,9 +562,10 @@ li>a {
 }
 
 .w-about .w-col {
-    margin:  0 0 48px;
+    margin: 0 0 48px;
     max-width: 635px;
 }
+
 .w-about>.w-col>h1 {
     margin: 0 0 32px;
 }
@@ -526,23 +595,26 @@ li>a {
     width: 100%;
     object-fit: cover;
 }
+
 @media screen and (min-width : 768px) {
     .w-about {
         display: flex;
         justify-content: space-between;
-        position:relative;
+        position: relative;
         z-index: 2;
     }
-    .w-about > .w-col {
+
+    .w-about>.w-col {
         padding: 48px 0 0;
         margin: 0 0 440px;
     }
+
     .w-about_svg {
         position: absolute;
         bottom: 0;
         left: 8.33%;
     }
-    
+
 }
 
 /* Video Player */
