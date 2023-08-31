@@ -825,12 +825,12 @@ W = class {
         }
 
         intro(d = B.delay) {
-
-
+            this.run()
         }
 
         run() {
-            B.e.b.run();
+            B.e.n.run();
+            B.e.s.run()
             C.run();
         }
 
@@ -1098,10 +1098,52 @@ W = class {
 
 
     }
+    // Toggle
+    class T {
+        constructor(el) {
+            this.id = el.id
+            this.run()
+        }
+
+        static plug() {
+            return Array.from(M.SelectAll('.T')).map(
+                (el) => {
+                    return new T(el)
+                }
+            )
+        }
+
+        run() {
+            this.e('a')
+        }
+
+        e(a) {
+            console.log(this.id)
+            const
+                s = B.e.s;
+            M.E(".open_" + this.id, 'click', (e) => {
+                M.Sp(e);
+                s.stop();
+                this.cl('a');
+                if (this.id === 'search') M.Select('#searchInput').focus();
+            }, a);
+            M.E(".close_" + this.id, 'click', (e) => {
+                M.Sp(e);
+                s.run();
+                this.cl('r');
+            }, a);
+        }
+
+        cl(o) {
+            M.Cl(M.Select("#" + this.id), o, "is-active");
+        }
+    }
+
     // Nav 
     class n {
         constructor() {
             M.Bind(this, ['open', 'close'])
+            this.subMenu = ['solutions','services','entreprise','ressources']
 
         }
         open(e) {
@@ -1114,9 +1156,9 @@ W = class {
 
         cb(e, o) {
             M.Sp(e)
-            M.Cl(".w-nav_header", o, 'is-active')
+            M.Cl("#menu", o, 'is-active')
             M.Cl(".open_menu", o, 'is-active')
-            M.Cl(".open_menu", o, 'is-active')
+            M.Cl(".close_menu", o, 'is-active')
         }
           e(o) {
             M.E(".open_menu", 'click', this.open, o)
@@ -1135,15 +1177,15 @@ W = class {
     class b {
         constructor() {
             M.Bind(this, ['setSafePadding']);
-            this.io = new io;
+            this.io = new io();
             this.roR = new M.ROR(this.setSafePadding);
-
             this.on(true);
         }
 
         plug() {
             B.e.s = new s();
             B.e.n = new n();
+            B.E.T = T.plug()
         }
 
         init() {
@@ -1178,8 +1220,8 @@ W = class {
         }
 
 
-    }
+    };
 
-    B.e.b = new b;
+    B.e.b = new b();
     console.log('\n %c Made with ❤️ by La2spaille : https://www.la2spaille.studio  %c \n ', 'border: 1px solid #000;color: #fff; background: #000; padding:5px 0;', '');
 }();

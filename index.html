@@ -689,7 +689,7 @@
                     <div class="l-rl">
                         <div class="l-tb">
                             <div class="w-testimony">
-                                <div class="w-col">
+                                <div class="w-col l">
                                     <h1 class="testimony_heading f-h3 f-color_dark m:mb">
                                         <span>Nos clients témoignent</span>
                                     </h1>
@@ -1103,7 +1103,7 @@
                                     <div class="w-expert_img">
                                         <img class="expert_img" src="/media/expert0.png" alt="">
                                         <div class="w-expert_testimony_cta">
-                                            <button type="button" class="expert_testimony_cta">Voir le
+                                            <button type="button" class="expert_testimony_cta open_testimony_pop_up open_overlay">Voir le
                                                 témoignage</button>
                                         </div>
                                     </div>
@@ -1114,7 +1114,7 @@
                                     <div class="w-expert_img">
                                         <img class="expert_img" src="/media/expert1.png" alt="">
                                         <div class="w-expert_testimony_cta">
-                                            <button type="button" class="expert_testimony_cta">Voir le
+                                            <button type="button" class="expert_testimony_cta open_testimony_pop_up open_overlay">Voir le
                                                 témoignage</button>
                                         </div>
                                     </div>
@@ -1440,10 +1440,10 @@
         <div id="menu">
             <div class="w-ul-mobile_main_menu">
                 <ul class="ul-mobile_main_menu">
-                    <li><button class="c-icon next" type="button">Solutions</button></li>
-                    <li><button class="c-icon next" type="button">Services</button></li>
-                    <li><button class="c-icon next" type="button">Entreprise</button></li>
-                    <li><button class="c-icon next" type="button">Ressourses</button></li>
+                    <li><button class="c-icon next open_solutions_menu" type="button">Solutions</button></li>
+                    <li><button class="c-icon next open_services_menu" type="button">Services</button></li>
+                    <li><button class="c-icon next open_entreprise_menu" type="button">Entreprise</button></li>
+                    <li><button class="c-icon next open_ressources_menu" type="button">Ressourses</button></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Faire mon diagnostic</a></li>
@@ -1453,9 +1453,9 @@
                     <li class="f-center"><a href="#" class="f-underline">Se connecter</a></li>
                 </ul>
             </div>
-            <div class="w-ul-sub_menu" id="solutions_menu">
+            <div class="w-ul-sub_menu T" id="solutions_menu">
                 <div class="w-sub_menu_nav">
-                    <button class="c-icon back" type="button">Retour</button>
+                    <button class="c-icon back close_solutions_menu" type="button">Retour</button>
                 </div>
                 <h3 class="sub_menu_title"><span>Solution :</span></h3>
                 <ul class="ul-sub_menu">
@@ -1534,9 +1534,9 @@
                 </ul>
             </div>
 
-            <div class="w-ul-sub_menu" id="services_menu">
+            <div class="w-ul-sub_menu T" id="services_menu">
                 <div class="w-sub_menu_nav">
-                    <button class="c-icon back" type="button">Retour</button>
+                    <button class="c-icon back close_services_menu" type="button">Retour</button>
                 </div>
                 <h3 class="sub_menu_title"><span>Services :</span></h3>
                 <ul class="ul-sub_menu">
@@ -1583,8 +1583,8 @@
                 </ul>
             </div>
 
-            <div class="w-ul-sub_menu" id="entreprise_menu">
-                <div class="w-sub_menu_nav">
+            <div class="w-ul-sub_menu T" id="entreprise_menu">
+                <div class="w-sub_menu_nav close_entreprise_menu">
                     <button class="c-icon back" type="button">Retour</button>
                 </div>
                 <h3 class="sub_menu_title"><span>Entreprise :</span></h3>
@@ -1624,8 +1624,8 @@
                 </ul>
             </div>
 
-            <div class="w-ul-sub_menu" id="ressources_menu">
-                <div class="w-sub_menu_nav">
+            <div class="w-ul-sub_menu T" id="ressources_menu">
+                <div class="w-sub_menu_nav close_ressources_menu">
                     <button class="c-icon back" type="button">Retour</button>
                 </div>
                 <h3 class="sub_menu_title"><span>Ressources :</span></h3>
@@ -1666,12 +1666,12 @@
             </div>
 
         </div>
-        <div id="overlay"></div>
-        <div id="testimony_pop_up">
+        <div id="overlay" class="T close_overlay"></div>
+        <div id="testimony_pop_up" class="T">
             <div class="w-testimony_pop_up">
                 <img src="/media/expert-pop-up.png" alt="" class="testimony_pop_up_img">
                 <div class="w-testimony_pop_up_content">
-                    <div class="w-testimony_pop_up_svg">
+                    <div class="w-testimony_pop_up_svg close_testimony_pop_up close_overlay">
                         <svg xmlns="http://www.w3.org/2000/svg" width="47" height="31" viewBox="0 0 47 31" fill="none">
                             <g clip-path="url(#clip0_3502_1227)">
                                 <path

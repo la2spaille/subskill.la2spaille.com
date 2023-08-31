@@ -408,7 +408,10 @@ li>a {
     bottom: 0;
     z-index: 820;
 }
-
+#overlay.is-active {
+    opacity: 1;
+    pointer-events: all;
+}
 /* Nav */
 #nav {
     position: fixed;
@@ -483,7 +486,7 @@ li>a {
 
 .close_menu {
     position: absolute;
-    left: 8.33%;
+    left: 12.5%;
     top: 50%;
     transform: translateY(-50%);
     visibility: hidden;
@@ -577,10 +580,10 @@ li>a {
     left: 0;
     bottom: 0;
     right: 0;
-    transition: 0.7s var(--cb);
 }
-#menu.is-active {
+#menu.is-active,.w-ul-sub_menu.is-active {
     transform: translate(0);
+    pointer-events: all;
 }
 
 .w-ul-mobile_main_menu,
@@ -611,6 +614,8 @@ li>a {
     pointer-events: none;
     width: initial;
     transform: translateX(100%);
+    transition: 0.7s var(--cb);
+
 
 }
 
@@ -643,7 +648,10 @@ li>a {
     align-items: center;
     pointer-events: none;
 }
-
+#testimony_pop_up.is-active {
+    opacity: 1;
+    pointer-events: all;
+}
 .w-testimony_pop_up {
     background: var(--tertiary);
     max-width: 1078px;
@@ -886,6 +894,13 @@ li>a {
     .w-strength_list {
         display: grid;
         gap: 24px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (min-width:1024px) {
+    .w-strength_list {
+        display: grid;
+        gap: 24px;
         grid-template-columns: repeat(3, 1fr);
     }
 }
@@ -1099,9 +1114,23 @@ li>a {
 .testimony {
     white-space: pre-line;
 }
-
+.w-testimony_svg {
+    align-self: flex-end;
+}
 .company_logo {
     margin: 0 0 32px;
+}
+.w-testimony {
+    display: flex;
+}
+.w-testimony > .w-col.l {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.w-testimony .w-row {
+    display: flex;
+    padding: 0 0 32px;
 }
 
 /* FAQ */
