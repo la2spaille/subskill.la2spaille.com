@@ -959,6 +959,7 @@ W = class {
         cb(e) {
             const s = this._scroll,
                 smooth = !!e.changedTouches ? false : true;
+                return
             if (e.ctrlKey) return
             if (!smooth) return
             if (e.buttons === 4) return
