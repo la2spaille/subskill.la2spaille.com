@@ -1148,6 +1148,7 @@ W = class {
 
         }
         open(e) {
+
             this.cb(e, 'a')
         }
 
@@ -1157,6 +1158,7 @@ W = class {
 
         cb(e, o) {
             M.Sp(e)
+            M.Cl(M.Dom.root,'o','s')
             M.Cl("#menu", o, 'is-active')
             M.Cl(".open_menu", o, 'is-active')
             M.Cl(".close_menu", o, 'is-active')
